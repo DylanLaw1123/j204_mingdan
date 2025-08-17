@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>初二4 班级名单</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 引入 DataTables 和 jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+  
+  <style>
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      margin: 20px;
+      background: #f9fafb;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>初二4 班级名单</h1>
+  
+  <table id="classTable" class="display">
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>学号</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>邱穆芸</td><td>242154</td></tr>
+      <tr><td>2</td><td>陈妍希</td><td>242159</td></tr>
+      <tr><td>3</td><td>张芷欣</td><td>242156</td></tr>
+      <tr><td>4</td><td>杨时瑜</td><td>242149</td></tr>
+      <tr><td>5</td><td>颜姿彤</td><td>242163</td></tr>
+      <tr><td>6</td><td>许亦萱</td><td>242153</td></tr>
+      <tr><td>7</td><td>陈嘉恩</td><td>242168</td></tr>
+      <tr><td>8</td><td>陈钏宁</td><td>242155</td></tr>
+      <tr><td>9</td><td>李静恩</td><td>242158</td></tr>
+      <tr><td>10</td><td>刘瑞恩</td><td>242160</td></tr>
+      <tr><td>11</td><td>黄禹嫣</td><td>242164</td></tr>
+      <tr><td>12</td><td>妮娅</td><td>242166</td></tr>
+      <tr><td>13</td><td>陈姿卉</td><td>242162</td></tr>
+      <tr><td>14</td><td>何汶宣</td><td>242165</td></tr>
+      <tr><td>15</td><td>王歆茹</td><td>242151</td></tr>
+      <tr><td>16</td><td>潘姿颖</td><td>242147</td></tr>
+      <tr><td>17</td><td>施凯馨</td><td>242150</td></tr>
+      <tr><td>18</td><td>陈渝恩</td><td>242148</td></tr>
+      <tr><td>19</td><td>戴湘霖</td><td>242157</td></tr>
+      <tr><td>20</td><td>王婧涵</td><td>242152</td></tr>
+      <tr><td>21</td><td>许悦影</td><td>242167</td></tr>
+      <tr><td>22</td><td>朱俊绅</td><td>242189</td></tr>
+      <tr><td>23</td><td>陈毅祥</td><td>242177</td></tr>
+      <tr><td>24</td><td>谢承邑</td><td>242190</td></tr>
+      <tr><td>25</td><td>张智勇</td><td>242176</td></tr>
+      <tr><td>26</td><td>何凯旭</td><td>242173</td></tr>
+      <tr><td>27</td><td>赖家禾</td><td>242194</td></tr>
+      <tr><td>28</td><td>江致承</td><td>242171</td></tr>
+      <tr><td>29</td><td>刘俊祥</td><td>242186</td></tr>
+      <tr><td>30</td><td>卢隽益</td><td>242187</td></tr>
+      <tr><td>31</td><td>廖炫鑫</td><td>242179</td></tr>
+      <tr><td>32</td><td>刘宽辅</td><td>242170</td></tr>
+      <tr><td>33</td><td>卢裕城</td><td>242188</td></tr>
+      <tr><td>34</td><td>黄康桀</td><td>242191</td></tr>
+      <tr><td>35</td><td>伍思源</td><td>242180</td></tr>
+      <tr><td>36</td><td>彭宇乐</td><td>242181</td></tr>
+      <tr><td>37</td><td>潘家扬</td><td>242169</td></tr>
+      <tr><td>38</td><td>陈晋佑</td><td>242178</td></tr>
+      <tr><td>39</td><td>陈有权</td><td>242182</td></tr>
+      <tr><td>40</td><td>余根权</td><td>242175</td></tr>
+      <tr><td>41</td><td>黄凯杰</td><td>242192</td></tr>
+      <tr><td>42</td><td>黄恩杰</td><td>242183</td></tr>
+      <tr><td>43</td><td>黄俊熹</td><td>242193</td></tr>
+      <tr><td>44</td><td>黄明杰</td><td>242185</td></tr>
+      <tr><td>45</td><td>叶峻睿</td><td>242174</td></tr>
+      <tr><td>46</td><td>叶礼诚</td><td>242172</td></tr>
+      <tr><td>47</td><td>杨仁喆</td><td>242184</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    $(document).ready(function() {
+        $('#classTable').DataTable({
+            language: {
+                "lengthMenu": "每页显示 _MENU_ 条",
+                "zeroRecords": "没有找到结果",
+                "info": "第 _PAGE_ 页 (共 _PAGES_ 页)",
+                "infoEmpty": "无可用数据",
+                "infoFiltered": "(从 _MAX_ 条记录中筛选)",
+                "search": "搜索：",
+                "paginate": {
+                    "first": "首页",
+                    "last": "尾页",
+                    "next": "下一页",
+                    "previous": "上一页"
+                }
+            }
+        });
+    });
+  </script>
+</body>
+</html>
