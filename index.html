@@ -2,122 +2,115 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>初二4 班级名单</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 引入 DataTables 和 jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+  
   <style>
     body {
       font-family: 'Noto Sans SC', sans-serif;
-      background-color: #f9fafb;
+      margin: 20px;
+      background: #f9fafb;
     }
-    ::placeholder {
-      color: #9ca3af;
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+    }
+    td[contenteditable="true"] {
+      background-color: #fff9c4; /* 淡黄色提示可编辑 */
     }
   </style>
 </head>
-<body class="p-6">
-  <h1 class="text-3xl font-bold text-center mb-6">初二4 班级名单</h1>
-
-  <!-- 搜索框 -->
-  <div class="flex justify-center mb-4">
-    <input 
-      type="text" 
-      id="searchInput" 
-      placeholder="搜索姓名或学号..." 
-      class="w-80 p-2 border rounded-lg shadow-sm focus:ring focus:ring-blue-300"
-    />
-  </div>
-
-  <!-- 表格 -->
-  <div class="overflow-x-auto">
-    <table class="min-w-full bg-white rounded-xl shadow-md">
-      <thead class="bg-blue-500 text-white">
-        <tr>
-          <th class="py-2 px-4">序号</th>
-          <th class="py-2 px-4">姓名</th>
-          <th class="py-2 px-4">学号</th>
-        </tr>
-      </thead>
-      <tbody id="studentTable" class="text-center">
-        <!-- 数据将由 JS 插入 -->
-      </tbody>
-    </table>
-  </div>
+<body>
+  <h1>初二4 班级名单（可编辑）</h1>
+  
+  <table id="classTable" class="display">
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>学号</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td contenteditable="true">1</td><td contenteditable="true">邱穆芸</td><td contenteditable="true">242154</td></tr>
+      <tr><td contenteditable="true">2</td><td contenteditable="true">陈妍希</td><td contenteditable="true">242159</td></tr>
+      <tr><td contenteditable="true">3</td><td contenteditable="true">张芷欣</td><td contenteditable="true">242156</td></tr>
+      <tr><td contenteditable="true">4</td><td contenteditable="true">杨时瑜</td><td contenteditable="true">242149</td></tr>
+      <tr><td contenteditable="true">5</td><td contenteditable="true">颜姿彤</td><td contenteditable="true">242163</td></tr>
+      <tr><td contenteditable="true">6</td><td contenteditable="true">许亦萱</td><td contenteditable="true">242153</td></tr>
+      <tr><td contenteditable="true">7</td><td contenteditable="true">陈嘉恩</td><td contenteditable="true">242168</td></tr>
+      <tr><td contenteditable="true">8</td><td contenteditable="true">陈钏宁</td><td contenteditable="true">242155</td></tr>
+      <tr><td contenteditable="true">9</td><td contenteditable="true">李静恩</td><td contenteditable="true">242158</td></tr>
+      <tr><td contenteditable="true">10</td><td contenteditable="true">刘瑞恩</td><td contenteditable="true">242160</td></tr>
+      <tr><td contenteditable="true">11</td><td contenteditable="true">黄禹嫣</td><td contenteditable="true">242164</td></tr>
+      <tr><td contenteditable="true">12</td><td contenteditable="true">妮娅</td><td contenteditable="true">242166</td></tr>
+      <tr><td contenteditable="true">13</td><td contenteditable="true">陈姿卉</td><td contenteditable="true">242162</td></tr>
+      <tr><td contenteditable="true">14</td><td contenteditable="true">何汶宣</td><td contenteditable="true">242165</td></tr>
+      <tr><td contenteditable="true">15</td><td contenteditable="true">王歆茹</td><td contenteditable="true">242151</td></tr>
+      <tr><td contenteditable="true">16</td><td contenteditable="true">潘姿颖</td><td contenteditable="true">242147</td></tr>
+      <tr><td contenteditable="true">17</td><td contenteditable="true">施凯馨</td><td contenteditable="true">242150</td></tr>
+      <tr><td contenteditable="true">18</td><td contenteditable="true">陈渝恩</td><td contenteditable="true">242148</td></tr>
+      <tr><td contenteditable="true">19</td><td contenteditable="true">戴湘霖</td><td contenteditable="true">242157</td></tr>
+      <tr><td contenteditable="true">20</td><td contenteditable="true">王婧涵</td><td contenteditable="true">242152</td></tr>
+      <tr><td contenteditable="true">21</td><td contenteditable="true">许悦影</td><td contenteditable="true">242167</td></tr>
+      <tr><td contenteditable="true">22</td><td contenteditable="true">朱俊绅</td><td contenteditable="true">242189</td></tr>
+      <tr><td contenteditable="true">23</td><td contenteditable="true">陈毅祥</td><td contenteditable="true">242177</td></tr>
+      <tr><td contenteditable="true">24</td><td contenteditable="true">谢承邑</td><td contenteditable="true">242190</td></tr>
+      <tr><td contenteditable="true">25</td><td contenteditable="true">张智勇</td><td contenteditable="true">242176</td></tr>
+      <tr><td contenteditable="true">26</td><td contenteditable="true">何凯旭</td><td contenteditable="true">242173</td></tr>
+      <tr><td contenteditable="true">27</td><td contenteditable="true">赖家禾</td><td contenteditable="true">242194</td></tr>
+      <tr><td contenteditable="true">28</td><td contenteditable="true">江致承</td><td contenteditable="true">242171</td></tr>
+      <tr><td contenteditable="true">29</td><td contenteditable="true">刘俊祥</td><td contenteditable="true">242186</td></tr>
+      <tr><td contenteditable="true">30</td><td contenteditable="true">卢隽益</td><td contenteditable="true">242187</td></tr>
+      <tr><td contenteditable="true">31</td><td contenteditable="true">廖炫鑫</td><td contenteditable="true">242179</td></tr>
+      <tr><td contenteditable="true">32</td><td contenteditable="true">刘宽辅</td><td contenteditable="true">242170</td></tr>
+      <tr><td contenteditable="true">33</td><td contenteditable="true">卢裕城</td><td contenteditable="true">242188</td></tr>
+      <tr><td contenteditable="true">34</td><td contenteditable="true">黄康桀</td><td contenteditable="true">242191</td></tr>
+      <tr><td contenteditable="true">35</td><td contenteditable="true">伍思源</td><td contenteditable="true">242180</td></tr>
+      <tr><td contenteditable="true">36</td><td contenteditable="true">彭宇乐</td><td contenteditable="true">242181</td></tr>
+      <tr><td contenteditable="true">37</td><td contenteditable="true">潘家扬</td><td contenteditable="true">242169</td></tr>
+      <tr><td contenteditable="true">38</td><td contenteditable="true">陈晋佑</td><td contenteditable="true">242178</td></tr>
+      <tr><td contenteditable="true">39</td><td contenteditable="true">陈有权</td><td contenteditable="true">242182</td></tr>
+      <tr><td contenteditable="true">40</td><td contenteditable="true">余根权</td><td contenteditable="true">242175</td></tr>
+      <tr><td contenteditable="true">41</td><td contenteditable="true">黄凯杰</td><td contenteditable="true">242192</td></tr>
+      <tr><td contenteditable="true">42</td><td contenteditable="true">黄恩杰</td><td contenteditable="true">242183</td></tr>
+      <tr><td contenteditable="true">43</td><td contenteditable="true">黄俊熹</td><td contenteditable="true">242193</td></tr>
+      <tr><td contenteditable="true">44</td><td contenteditable="true">黄明杰</td><td contenteditable="true">242185</td></tr>
+      <tr><td contenteditable="true">45</td><td contenteditable="true">叶峻睿</td><td contenteditable="true">242174</td></tr>
+      <tr><td contenteditable="true">46</td><td contenteditable="true">叶礼诚</td><td contenteditable="true">242172</td></tr>
+      <tr><td contenteditable="true">47</td><td contenteditable="true">杨仁喆</td><td contenteditable="true">242184</td></tr>
+    </tbody>
+  </table>
 
   <script>
-    // 班级名单数据
-    const students = [
-      {id: 1, name: "邱穆芸", num: "242154"},
-      {id: 2, name: "陈妍希", num: "242159"},
-      {id: 3, name: "张芷欣", num: "242156"},
-      {id: 4, name: "杨时瑜", num: "242149"},
-      {id: 5, name: "颜姿彤", num: "242163"},
-      {id: 6, name: "许亦萱", num: "242153"},
-      {id: 7, name: "陈嘉恩", num: "242168"},
-      {id: 8, name: "陈钏宁", num: "242155"},
-      {id: 9, name: "李静恩", num: "242158"},
-      {id: 10, name: "刘瑞恩", num: "242160"},
-      {id: 11, name: "黄禹嫣", num: "242164"},
-      {id: 12, name: "妮娅", num: "242166"},
-      {id: 13, name: "陈姿卉", num: "242162"},
-      {id: 14, name: "何汶宣", num: "242165"},
-      {id: 15, name: "王歆茹", num: "242151"},
-      {id: 16, name: "潘姿颖", num: "242147"},
-      {id: 17, name: "施凯馨", num: "242150"},
-      {id: 18, name: "陈渝恩", num: "242148"},
-      {id: 19, name: "戴湘霖", num: "242157"},
-      {id: 20, name: "王婧涵", num: "242152"},
-      {id: 21, name: "许悦影", num: "242167"},
-      {id: 22, name: "朱俊绅", num: "242189"},
-      {id: 23, name: "陈毅祥", num: "242177"},
-      {id: 24, name: "谢承邑", num: "242190"},
-      {id: 25, name: "张智勇", num: "242176"},
-      {id: 26, name: "何凯旭", num: "242173"},
-      {id: 27, name: "赖家禾", num: "242194"},
-      {id: 28, name: "江致承", num: "242171"},
-      {id: 29, name: "刘俊祥", num: "242186"},
-      {id: 30, name: "卢隽益", num: "242187"},
-      {id: 31, name: "廖炫鑫", num: "242179"},
-      {id: 32, name: "刘宽辅", num: "242170"},
-      {id: 33, name: "卢裕城", num: "242188"},
-      {id: 34, name: "黄康桀", num: "242191"},
-      {id: 35, name: "伍思源", num: "242180"},
-      {id: 36, name: "彭宇乐", num: "242181"},
-      {id: 37, name: "潘家扬", num: "242169"},
-      {id: 38, name: "陈晋佑", num: "242178"},
-      {id: 39, name: "陈有权", num: "242182"},
-      {id: 40, name: "余根权", num: "242175"},
-      {id: 41, name: "黄凯杰", num: "242192"},
-      {id: 42, name: "黄恩杰", num: "242183"},
-      {id: 43, name: "黄俊熹", num: "242193"},
-      {id: 44, name: "黄明杰", num: "242185"},
-      {id: 45, name: "叶峻睿", num: "242174"},
-      {id: 46, name: "叶礼诚", num: "242172"},
-      {id: 47, name: "杨仁喆", num: "242184"},
-    ];
-
-    // 渲染表格
-    const tableBody = document.getElementById("studentTable");
-    function renderTable(data) {
-      tableBody.innerHTML = data.map(s => 
-        `<tr class="border-b hover:bg-gray-50">
-          <td class="py-2 px-4">${s.id}</td>
-          <td class="py-2 px-4">${s.name}</td>
-          <td class="py-2 px-4">${s.num}</td>
-        </tr>`
-      ).join("");
-    }
-    renderTable(students);
-
-    // 搜索功能
-    document.getElementById("searchInput").addEventListener("keyup", function () {
-      const keyword = this.value.toLowerCase();
-      const filtered = students.filter(s => 
-        s.name.toLowerCase().includes(keyword) || 
-        s.num.includes(keyword) || 
-        String(s.id).includes(keyword)
-      );
-      renderTable(filtered);
+    $(document).ready(function() {
+        $('#classTable').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            language: {
+                "lengthMenu": "每页显示 _MENU_ 条",
+                "zeroRecords": "没有找到结果",
+                "info": "第 _PAGE_ 页 (共 _PAGES_ 页)",
+                "infoEmpty": "无可用数据",
+                "infoFiltered": "(从 _MAX_ 条记录中筛选)",
+                "search": "搜索：",
+                "paginate": {
+                    "first": "首页",
+                    "last": "尾页",
+                    "next": "下一页",
+                    "previous": "上一页"
+                }
+            }
+        });
     });
   </script>
 </body>
